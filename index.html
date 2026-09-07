@@ -1,9 +1,40 @@
+
 <!DOCTYPE html>
 <html lang="en-AU">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>The Four Cs — A Personal Reflection | Teams of Tomorrow</title>
+
+<!--
+  ============================================================
+  THE FOUR Cs — A PERSONAL REFLECTION
+  (c) Teams of Tomorrow®
+  Version 2 · 3 September 2026
+  ============================================================
+
+  v2 — Chris's first-draft feedback applied
+    · Opening paragraph rewritten
+    · All four dimension descriptions rewritten
+    · "counsel" replaced with "peer support" (suggested paid advice)
+    · CTA changed from "Talk to us about The Circle" to
+      "Explore The Circle", linking to the webpage
+    · "Save a copy" renamed "Print a copy"
+    · Email capture block removed
+    · Footer page links removed
+
+  v1 — 3 September 2026
+    · First build. Fifteen questions across Capacity, Confidence,
+      Clarity and Connection. Four readings determined by profile
+      shape rather than total score.
+
+  OPEN BEFORE LAUNCH
+    1. CIRCLE_URL is empty — the button currently goes nowhere.
+    2. Web font licences for Argent CF and Sofia Pro Soft (see below).
+    3. EVEN_SPREAD and ISOLATION_CUT thresholds to be confirmed.
+    4. Solo Navigator descriptor still reads "It is counsel."
+  ============================================================
+-->
 
 <!--
   ============================================================
@@ -384,27 +415,6 @@
   .invitation .body{font-size:1.02rem;color:var(--navy-soft)}
   .actions{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:1.8rem}
 
-  .keep{
-    margin-top:2.6rem;
-    padding-top:1.6rem;
-    border-top:1px solid var(--rule-soft);
-  }
-  .keep label{display:block;font-size:.9rem;color:var(--navy-soft);margin-bottom:.6rem}
-  .keep .row{display:flex;flex-wrap:wrap;gap:.6rem}
-  .keep input{
-    flex:1 1 15rem;
-    font-family:var(--font-body);
-    font-size:.95rem;
-    padding:.85rem 1rem;
-    border:1px solid var(--rule);
-    border-radius:999px;
-    background:#fff;
-    color:var(--ink);
-  }
-  .keep input::placeholder{color:var(--tan)}
-  .said{font-size:.9rem;color:var(--navy);margin:.9rem 0 0}
-  .said[hidden]{display:none}
-
   footer{
     padding:2.4rem clamp(1.25rem,5vw,3.5rem) 3rem;
     background:var(--navy-deep);
@@ -431,7 +441,7 @@
     .result-hero h2,.result-hero .kicker,.result-hero .descriptor{color:#000}
     .shape,.invitation{background:#fff;padding:1.5rem 0;border:0}
     .band .track i{background:#555 !important;print-color-adjust:exact;-webkit-print-color-adjust:exact}
-    .actions,.keep,.qnav,#retake{display:none !important}
+    .actions,.qnav{display:none !important}
     footer{background:#fff;color:#000;padding:1.5rem 0 0;border-top:1px solid #999}
     footer .line{color:#000}
     footer a{color:#000;text-decoration:none}
@@ -457,17 +467,17 @@
     <section class="stage is-live centre opening" id="stage-open" aria-labelledby="open-h">
       <div class="inner">
         <h1 id="open-h">The Four Cs</h1>
-        <p class="lede">Fifteen questions about how you are leading right now. Not a test, and there is no score to beat. What comes back is a reading of the shape of your leadership — where it is strong, and where it is asking for attention.</p>
+        <p class="lede">Here are fifteen questions about how you lead right now. This is not a test — there is no score or benchmark to beat. What you’ll generate is a snapshot of your leadership, shaped by the four dimensions offered below.</p>
 
         <ul class="four">
-          <li><span class="word">Capacity</span><span class="gloss">What you are carrying, what only you can carry, and what is left at the end of a week.</span></li>
-          <li><span class="word">Confidence</span><span class="gloss">Leading without having all the answers, and staying with not-knowing long enough to see clearly.</span></li>
-          <li><span class="word">Clarity</span><span class="gloss">Seeing the pattern, your own part in it, and the consequences beyond your team.</span></li>
-          <li><span class="word">Connection</span><span class="gloss">Truth-telling inside the team, and counsel from outside the organisation.</span></li>
+          <li><span class="word">Capacity</span><span class="gloss">This is dependent on what you are currently carrying, what only you can carry, and what you have left at the end of a week.</span></li>
+          <li><span class="word">Confidence</span><span class="gloss">This is your ability to lead without needing all of the answers, holding on to not-knowing long enough to see things more clearly.</span></li>
+          <li><span class="word">Clarity</span><span class="gloss">Seeing the patterns, where you fit and don’t fit, and the consequences beyond your team.</span></li>
+          <li><span class="word">Connection</span><span class="gloss">Honesty without judgement within the team, and peer support from outside of the organisation.</span></li>
         </ul>
 
         <div class="steps">
-          <p>Around six minutes. One question at a time, answered as honestly as you can manage — the reflection is only as useful as the answers are true. Nothing is shared unless you ask us to send it to you.</p>
+          <p>Around six minutes. One question at a time, answered as honestly as you can manage — the reflection is only as useful as the answers are true. Nothing is stored or sent anywhere. What comes back at the end is yours.</p>
         </div>
 
         <button class="btn" id="begin">Begin the reflection</button>
@@ -524,18 +534,9 @@
           <div class="body" id="inv-body"></div>
 
           <div class="actions">
-            <a class="btn warm" id="inv-cta" href="#">Talk to us about The Circle</a>
-            <button class="btn ghost" id="save">Save a copy</button>
+            <a class="btn warm" id="inv-cta" href="#">Explore The Circle</a>
+            <button class="btn ghost" id="print">Print a copy</button>
             <button class="btn ghost" id="retake">Take it again</button>
-          </div>
-
-          <div class="keep">
-            <label for="email">Send this reflection to yourself, and we will add nothing else without asking.</label>
-            <div class="row">
-              <input type="email" id="email" placeholder="you@company.com" autocomplete="email">
-              <button class="btn ghost" id="send">Send it to me</button>
-            </div>
-            <p class="said" id="said" hidden></p>
           </div>
         </div>
       </div>
@@ -546,8 +547,7 @@
   <footer>
     <p class="logo"><span>Teams of Tomorrow®</span></p>
     <p class="line">Because leadership was never meant to be done alone.</p>
-    <p>Teams of Tomorrow<sup>®</sup> is a registered trade mark.
-       <a href="#">The Threshold</a>, <a href="#">Master Classes</a> and <a href="#">The Circle</a>.</p>
+    <p>Teams of Tomorrow<sup>®</sup> is a registered trade mark.</p>
   </footer>
 </div>
 
@@ -556,22 +556,11 @@
   "use strict";
 
   /* =========================================================
-     ENDPOINT — where a completed reflection is sent.
-     Leave empty and the “Send it to me” button falls back to opening a
-     pre-filled email, so nothing is ever silently lost.
-
-     Paste in ONE of:
-       • a form service URL — Formspree (https://formspree.io/f/xxxxxxx),
-         Basin or Formspark. Sign up, create a form, paste the URL. No
-         developer needed, and it emails you every submission.
-       • your own webhook — Zapier / Make catch hook, which can then write
-         to the CRM and trigger the follow-up email from your own platform.
-
-     Note the two jobs are separate: this posts the result to you. The email
-     that reaches the leader is sent by whatever sits behind this URL, not by
-     the browser. A browser cannot send email on its own.
+     CIRCLE_URL — where the "Explore The Circle" button goes.
+     Paste the live page address here. Left empty, the button still
+     renders but does nothing, so it should not go live blank.
      ========================================================= */
-  var ENDPOINT = '';
+  var CIRCLE_URL = 'https://www.teamsoftomorrow.net/welcome';
 
   /* =========================================================
      TUNING — the two numbers Chris and Elena need to confirm
@@ -586,10 +575,10 @@
   var SCALE = ['Rarely','Sometimes','About half','Often','Always'];
 
   var DIMENSIONS = {
-    capacity:  {name:'Capacity',   note:'What you are carrying, and what is left at the end of a week.'},
-    confidence:{name:'Confidence', note:'Leading well without having all the answers.'},
-    clarity:   {name:'Clarity',    note:'Seeing the pattern and your own part in it.'},
-    connection:{name:'Connection', note:'Truth inside the team, counsel outside the organisation.'}
+    capacity:  {name:'Capacity',   note:'What you are carrying, and what you have left at the end of a week.'},
+    confidence:{name:'Confidence', note:'Leading without needing all of the answers.'},
+    clarity:   {name:'Clarity',    note:'Seeing the patterns, and where you fit and don\u2019t fit.'},
+    connection:{name:'Connection', note:'Honesty within the team, peer support outside it.'}
   };
 
   var QUESTIONS = [
@@ -736,6 +725,7 @@
     el('reading-name').textContent = r.name;
     el('reading-desc').textContent = r.desc;
     el('inv-head').textContent = r.invHead;
+    if (CIRCLE_URL) el('inv-cta').setAttribute('href', CIRCLE_URL);
     el('inv-body').innerHTML = r.invBody;
 
     var bands = el('bands');
@@ -784,84 +774,11 @@
   el('retake').addEventListener('click', function(){
     answers = new Array(QUESTIONS.length).fill(null);
     idx = 0;
-    el('email').value = '';
-    el('said').hidden = true;
     render();
     show('q');
   });
 
-  function summaryText(){
-    var m = means();
-    var r = READINGS[readingFor(m)];
-    var lines = ['The Four Cs — a personal reflection', '', 'How you show up: ' + r.name, r.desc, ''];
-    Object.keys(DIMENSIONS).forEach(function(k){
-      lines.push(DIMENSIONS[k].name + ': ' + m[k].toFixed(1) + ' of 5');
-    });
-    lines.push('', r.invHead, '', 'Teams of Tomorrow® — because leadership was never meant to be done alone.');
-    return lines.join('\n');
-  }
-
-  el('send').addEventListener('click', function(){
-    var address = el('email').value.trim();
-    var said = el('said');
-    var btn = this;
-
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(address)) {
-      said.textContent = 'That address does not look complete — check it and try again.';
-      said.hidden = false;
-      return;
-    }
-
-    var m = means();
-    var payload = {
-      email: address,
-      reading: READINGS[readingFor(m)].name,
-      capacity: m.capacity.toFixed(2),
-      confidence: m.confidence.toFixed(2),
-      clarity: m.clarity.toFixed(2),
-      connection: m.connection.toFixed(2),
-      isolationAnswer: answers[Q_ISOLATION],
-      answers: answers.join(','),
-      summary: summaryText(),
-      source: 'Four Cs reflection',
-      takenAt: new Date().toISOString()
-    };
-
-    /* No endpoint configured yet: hand the reader their own copy rather than
-       pretending something was sent. */
-    if (!ENDPOINT) {
-      window.location.href = 'mailto:' + encodeURIComponent(address) +
-        '?subject=' + encodeURIComponent('Your Four Cs reflection') +
-        '&body=' + encodeURIComponent(summaryText());
-      said.textContent = 'Opening an email with your reflection in it. (No form endpoint is connected yet — see ENDPOINT in the script.)';
-      said.hidden = false;
-      return;
-    }
-
-    btn.disabled = true;
-    said.textContent = 'Sending…';
-    said.hidden = false;
-
-    fetch(ENDPOINT, {
-      method: 'POST',
-      headers: {'Content-Type':'application/json', 'Accept':'application/json'},
-      body: JSON.stringify(payload)
-    })
-    .then(function(res){
-      if (!res.ok) throw new Error('HTTP ' + res.status);
-      said.textContent = 'Sent. It will reach ' + address + ' shortly — check the promotions folder if it does not appear.';
-    })
-    .catch(function(){
-      said.innerHTML = 'That did not go through. ' +
-        '<a href="mailto:' + address +
-        '?subject=' + encodeURIComponent('Your Four Cs reflection') +
-        '&body=' + encodeURIComponent(summaryText()) +
-        '">Open it as an email instead</a>, or use “Save a copy”.';
-    })
-    .finally(function(){ btn.disabled = false; });
-  });
-
-  el('save').addEventListener('click', function(){ window.print(); });
+  el('print').addEventListener('click', function(){ window.print(); });
 
   /* number keys 1–5 answer the visible question */
   document.addEventListener('keydown', function(e){
